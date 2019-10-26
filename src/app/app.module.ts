@@ -6,6 +6,7 @@ import { PainelSimplesComponent } from './painel-simples/painel-simples.componen
 import { BarraNavegacaoComponent } from './barra-navegacao/barra-navegacao.component';
 import { MenuLateralComponent } from './barra-navegacao/menu-lateral/menu-lateral.component';
 import { ResusoComponent } from './resuso/resuso.component';
+import { ConsultaComponent } from './consulta/consulta.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { ResusoComponent } from './resuso/resuso.component';
     PainelSimplesComponent,
     BarraNavegacaoComponent,
     MenuLateralComponent,
-    ResusoComponent
+    ResusoComponent,
+    ConsultaComponent
   ],
   imports: [
     BrowserModule
