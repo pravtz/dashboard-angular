@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { PainelSimplesComponent } from './painel-simples/painel-simples.component';
 import { BarraNavegacaoComponent } from './barra-navegacao/barra-navegacao.component';
 import { MenuLateralComponent } from './barra-navegacao/menu-lateral/menu-lateral.component';
+import { ResusoComponent } from './resuso/resuso.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PainelSimplesComponent,
     BarraNavegacaoComponent,
-    MenuLateralComponent
+    MenuLateralComponent,
+    ResusoComponent
   ],
   imports: [
     BrowserModule
