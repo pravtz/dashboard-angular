@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+
 
 import { AppComponent } from './app.component';
 import { PainelSimplesComponent } from './painel-simples/painel-simples.component';
@@ -9,13 +9,10 @@ import { MenuLateralComponent } from './barra-navegacao/menu-lateral/menu-latera
 import { ResusoComponent } from './resuso/resuso.component';
 import { ConsultaComponent } from './consulta/consulta.component';
 import { ConsultaPorEspecialidadeComponent } from './consulta/consulta-por-especialidade/consulta-por-especialidade.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
-let routes = [
-  { path : "resumo", component: ResusoComponent},
-  { path : "consulta", component: ConsultaComponent},
-  { path : "**" , redirectTo:"/resumo"}
-]
+
 
 @NgModule({
   declarations: [
@@ -29,7 +26,8 @@ let routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    AppRoutingModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
