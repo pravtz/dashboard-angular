@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ResumoService } from './resumo.service';
 
 @Component({
   selector: 'app-resuso',
@@ -8,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ResusoComponent implements OnInit {
 
-  resumo; // será carregado a partir da API http://www.devup.com.br/php/api-dashboard/api/resumo
+  resumo; // será carregado a partir da API http://www.devup.com.br/php/api-dashboard/api/resumo através de um serviço
 
   // resumo = {
   //   consultas: {
@@ -27,11 +28,10 @@ export class ResusoComponent implements OnInit {
   //   }
   // }
 
-  constructor(private http:HttpClient) { }
+  constructor(private resumoService:ResumoService) { }
 
   ngOnInit() {
-    this.http.get("http://www.devup.com.br/php/api-dashboard/api/resumo")
-      .subscribe( dados => this.resumo = dados);
+    this.resumoService.getResumo().subscribe( dados => this.resumo = dados)
 
 
   }
