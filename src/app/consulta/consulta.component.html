@@ -1,12 +1,15 @@
+<!-- o simbolo ? é um operador do angular chamado de SAFE NAVIGATION OPERATOR
+que so tenta acessar 'realizadas' se 'consultas' não estiver nulo ou undefined  -->
+
 <app-consulta-por-especialidade
-  [consultas] = "consultas.realizadas"
+  [consultas] = "consultas?.realizadas"
   titulo = "Consultas Realizadas">
 
 </app-consulta-por-especialidade>
 
 
 <app-consulta-por-especialidade
-  [consultas] = "consultas.marcadas"
+  [consultas] = "consultas?.marcadas"
   titulo = "Consultas Marcadas">
 
 </app-consulta-por-especialidade>
