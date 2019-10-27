@@ -1,8 +1,10 @@
-<app-painel-simples titulo="Consultas Marcadas - Últimos 30 Dias" col="6">
-  <h3 class="text-center">{{resumo.consultas.consultas_30dias_anteiores}}</h3>
-</app-painel-simples>
+<div *ngIf = "resumo">
 
-<app-painel-simples titulo="Consultas Marcadas - Próximos 30 Dias" col="6">
+  <app-painel-simples titulo="Consultas Marcadas - Últimos 30 Dias" col="6">
+    <h3 class="text-center">{{resumo.consultas.consultas_30dias_anteiores}}</h3>
+  </app-painel-simples>
+
+  <app-painel-simples titulo="Consultas Marcadas - Próximos 30 Dias" col="6">
   <h3 class="text-center">{{resumo.consultas.consultas_30dias_posteriores}}</h3>
 </app-painel-simples>
 
@@ -27,3 +29,5 @@
       </div>
     </div>
   </app-painel-simples>
+
+</div>
