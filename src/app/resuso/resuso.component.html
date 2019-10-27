@@ -1,3 +1,8 @@
+<!-- caso exista um erro na requisição get da api será mostrado a mensagem 'falha na comunicação' -->
+<div *ngIf= "erro">
+  <h1 class="text center">Falha na comunicação</h1>
+</div>
+
 <div *ngIf = "resumo">
 
   <app-painel-simples titulo="Consultas Marcadas - Últimos 30 Dias" col="6">
@@ -5,7 +10,7 @@
   </app-painel-simples>
 
   <app-painel-simples titulo="Consultas Marcadas - Próximos 30 Dias" col="6">
-  <h3 class="text-center">{{resumo.consultas.consultas_30dias_posteriores}}</h3>
+    <h3 class="text-center">{{resumo.consultas.consultas_30dias_posteriores}}</h3>
 </app-painel-simples>
 
 <app-painel-simples col="6" titulo="Faturamento Anterior">

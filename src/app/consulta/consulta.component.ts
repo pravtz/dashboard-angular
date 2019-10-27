@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { ConsultaService } from './consulta.service';
 
@@ -8,8 +8,9 @@ import { ConsultaService } from './consulta.service';
   templateUrl: './consulta.component.html',
   styleUrls: ['./consulta.component.css']
 })
-export class ConsultaComponent implements OnInit {
+export class ConsultaComponent implements OnInit, OnDestroy {
 
+  erro;
   consultaInscricao;
   consultas;
 
@@ -34,7 +35,9 @@ export class ConsultaComponent implements OnInit {
   constructor(private consultaService:ConsultaService) { }
 
   ngOnInit() {
-    this.consultaInscricao = this.consultaService.getConsulta().subscribe(dados => this.consultas = dados)
+    this.consultaInscricao = this.consultaService.getConsulta().subscribe(
+      dados => this.consultas = dados,
+      erro => this.erro = true);
   }
 
   ngOnDestroy(){

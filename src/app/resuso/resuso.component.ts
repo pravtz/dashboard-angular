@@ -8,6 +8,8 @@ import { ResumoService } from './resumo.service';
   styleUrls: ['./resuso.component.css']
 })
 export class ResusoComponent implements OnInit, OnDestroy {
+
+  erro;
   inscricao;
   resumo; // será carregado a partir da API http://www.devup.com.br/php/api-dashboard/api/resumo através de um serviço
 
@@ -31,7 +33,9 @@ export class ResusoComponent implements OnInit, OnDestroy {
   constructor(private resumoService:ResumoService) { }
 
   ngOnInit() {
-    this.inscricao = this.resumoService.getResumo().subscribe( dados => this.resumo = dados)
+    this.inscricao = this.resumoService.getResumo().subscribe(
+      dados => this.resumo = dados,
+      erro => this.erro = true);
 
 
   }
