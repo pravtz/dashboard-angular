@@ -1,7 +1,11 @@
-<app-barra-navegacao></app-barra-navegacao>
+
+<!-- Capturando o evento onToggle e chamando a função toggle que foi declarada dentro do menu-lateral. -->
+<app-barra-navegacao (onToggle)="menuLateral.toggle()"></app-barra-navegacao>
 
 <div class="main">
-  <app-menu-lateral></app-menu-lateral>
+
+    <!-- Declarando a variável menuLateral para fazer uma referência aos dados do componente menu-lateral. -->
+  <app-menu-lateral #menuLateral></app-menu-lateral>
   <div class="content">
     <router-outlet></router-outlet>
   </div>
